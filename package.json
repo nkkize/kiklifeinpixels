@@ -1,0 +1,22 @@
+{
+  "name": "kiklifeinpixels",
+  "version": "1.0.0",
+  "description": "This is a bot for kik platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkkize/kiklifeinpixels.git"
+  },
+  "author": "Narender Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nkkize/kiklifeinpixels/issues"
+  },
+  "homepage": "https://github.com/nkkize/kiklifeinpixels#readme",
+  "dependencies": {
+    "@kikinteractive/kik": "^2.2.1"
+  }
+}
