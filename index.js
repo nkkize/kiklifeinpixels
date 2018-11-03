@@ -29,10 +29,10 @@ bot.onStartChattingMessage((message) => {
 // Set up your server
 let server = http
     .createServer(bot.incoming())
-    .listen(9093, (err) => {
+    .listen(process.env.serverPort, (err) => {
   if (err) {
     return console.log('something bad happened', err)
   }
 
-  console.log(`server is listening on port 9093`)
+  console.log(`server is listening on port ${process.env.serverPort}`)
 });
