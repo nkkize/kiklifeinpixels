@@ -1,23 +1,21 @@
-let util = require('util'); 
 let http = require('http');
-let Bot  = require('@kikinteractive/kik');
+let Bot = require('@kikinteractive/kik');
+var logger = require('tracer').console();
+let handler = require('./handlers');
 
 let bot = new Bot({
-    username: process.env.username, 
+    username: process.env.username,
     apiKey: process.env.apiKey,
-    baseUrl: process.env.baseUrl, 
+    baseUrl: process.env.baseUrl,
 });
 
 // Send the configuration to kik
 bot.updateBotConfiguration();
 
-// The onTextMessage(message) handler
-bot.onTextMessage((message) => {
+// use handlers to serve the user requests
+bot.use(handler)
 
-    message.reply(message.body);
-    console.log(message.body);
-});
-
+// TODO: move to handlers
 // start chatting message handler. This message is only sent once. 
 bot.onStartChattingMessage((message) => {
     bot.getUserProfile(message.from)
@@ -27,12 +25,11 @@ bot.onStartChattingMessage((message) => {
 });
 
 // Set up your server
-let server = http
-    .createServer(bot.incoming())
-    .listen(process.env.serverPort, (err) => {
-  if (err) {
-    return console.log('something bad happened', err)
-  }
-
-  console.log(`server is listening on port ${process.env.serverPort}`)
-});
+http.createServer(bot.incoming())
+    .listen(process.env.serverPort || 8080, (err) => {
+        if (err) {
+            logger.error('something bad happened', err);
+            return;
+        }
+        logger.info(`server is listening on port ${process.env.serverPort || 8080}`)
+    });
