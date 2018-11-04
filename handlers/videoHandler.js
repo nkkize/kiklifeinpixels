@@ -1,4 +1,4 @@
-var logger = require('tracer').console();
+let logger = require('tracer').console();
 
 module.exports = function (message) {
     logger.info(`received a video message with videoUrl: ${message.videoUrl}`);
@@ -11,6 +11,8 @@ module.exports = function (message) {
             "attribution": "camera"
         }
     ];
+
+    //message.reply("that's a nice video!")
 
     message.reply(response)
         .then(res => {

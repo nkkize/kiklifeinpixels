@@ -14,5 +14,7 @@ username=${username}
 apiKey=${apiKey}
 # The webhook, the the web tunnel or host you have running
 baseUrl=${baseUrl}/incoming
+# The apiKey of the your agent in api.ai/dialogflow (V1)
+apiaiAccessToken=${apiaiAccessToken}
 
 ```

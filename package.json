@@ -18,6 +18,7 @@
   "homepage": "https://github.com/nkkize/kiklifeinpixels#readme",
   "dependencies": {
     "@kikinteractive/kik": "^2.2.1",
+    "apiai": "^4.0.3",
     "tracer": "^0.9.2"
   }
 }

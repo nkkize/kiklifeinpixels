@@ -1,7 +1,7 @@
 let textHandler = require('./textHandler');
 let pictureHandler = require('./pictureHandler');
 let videoHandler = require('./videoHandler');
-var logger = require('tracer').console();
+let logger = require('tracer').console();
 
 const handlers = {
     "text": textHandler,

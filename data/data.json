@@ -1,0 +1,17 @@
+[
+	{
+		"intent": "greetings",
+		"responses": [
+            "Hey! How can I help you?",
+			"Hey, What's up!",
+			"Hi! Nice to meet you. :)"
+        ]
+	},
+	{
+		"intent": "fallback",
+		"responses": [
+            "Sorry I didn't understand this!",
+            "I'm sorry, I didn't get that. I need to learn a lot of stuff yet."
+        ]
+	}
+]

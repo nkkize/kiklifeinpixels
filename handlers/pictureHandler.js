@@ -1,4 +1,4 @@
-var logger = require('tracer').console();
+let logger = require('tracer').console();
 
 module.exports = function (message) {
     logger.info(`received a picture message with picUrl: ${message.picUrl}`);

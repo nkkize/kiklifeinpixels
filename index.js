@@ -1,6 +1,6 @@
 let http = require('http');
 let Bot = require('@kikinteractive/kik');
-var logger = require('tracer').console();
+let logger = require('tracer').console();
 let handler = require('./handlers');
 
 let bot = new Bot({
